@@ -13,7 +13,7 @@ questionContainair.addEventListener("click", () => {
 });
 
 btn1.addEventListener("click", () => {
-    response.classList.add("show-response");
+    response.classList.add('show-response');
     response.style.background = "green";
 });
 
@@ -36,16 +36,16 @@ window.addEventListener("mousemove", (e) => {
 });
 
 window.addEventListener("mousedown", () => {
-  mousemove.style.transform = "scale(2) translate(-25%, -25%";
+  mousemove.style.transform = "scale(2) translate(-25%, -25%)";
 });
                         
 window.addEventListener("mouseup", () => {
-  mousemove.style.transform = "scale(1) translate(-50%, -50%";
+  mousemove.style.transform = "scale(1) translate(-50%, -50%)";
   mousemove.style.border = "2px solid teal";                                               
 });
                         
 questionContainair.addEventListener("mouseenter", () => {
-  questionContainair.style.background = "rgba(0, 0, 0, 0.6";
+  questionContainair.style.background = "rgba(0, 0, 0, 0.6)";
 });
                         
 questionContainair.addEventListener("mouseout", () => {
@@ -53,7 +53,7 @@ questionContainair.addEventListener("mouseout", () => {
 });
  
 response.addEventListener("mouseover", () => {
-  response.style.transform ="rotate(2deg)";
+  response.style.transform = "rotate(2deg)";
 });
 
 // --------------------------------------------------------
@@ -62,9 +62,9 @@ response.addEventListener("mouseover", () => {
 const KeypressContainer = document.querySelector(".keypress");
 const key = document.getElementById("key");
 
-const ring = () => {
-  const audio = new audio();
-  audio.src = "./Enter.mp3";
+const ring = (key) => {
+  const audio = new Audio();
+  audio.src = key + ".mp3";
   audio.play(); 
 };
 
@@ -80,8 +80,28 @@ document.addEventListener("keypress", (e) => {
     KeypressContainer.style.background = "red";
   }
   
-  ring();
+  if (e.key === "z") ring(e.key);
 });
+
+// --------------------------------------------------------
+
+// Scroll Event
+
+const nav = document.querySelector("nav");
+
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 120) {
+    nav.style.top = 0;
+  } else {
+    nav.style.top = "-50px";
+  }
+});
+
+// ---------------------------------------------------------------------
+
+
+
+
 
 
 
