@@ -13,7 +13,7 @@ questionContainair.addEventListener("click", () => {
 });
 
 btn1.addEventListener("click", () => {
-    response.classList.add('show-response');
+    response.classList.add("show-response");
     response.style.background = "green";
 });
 
@@ -32,7 +32,6 @@ const mousemove = document.querySelector(".mousemove");
 window.addEventListener("mousemove", (e) => {
   mousemove.style.left = e.pageX + "px";
   mousemove.style.top = e.pageY + "px";
-  console.log(e);
 });
 
 window.addEventListener("mousedown", () => {
@@ -98,9 +97,105 @@ window.addEventListener("scroll", () => {
 });
 
 // ---------------------------------------------------------------------
+// Form Event
+
+const inputName = document.querySelector('input[type="text"]');
+const select = document.querySelector("select");
+const form = document.querySelector("form");
+let pseudo = "";
+let language = "";
+
+inputName.addEventListener("input", (e) => {
+  pseudo = e.target.value;
+});
+
+select.addEventListener("input", (e) => {
+  language = e.target.value;
+});
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  
+  console.log(cgv.checked);
+  
+  if (cgv.checked) {
+    document.querySelector("form > div").innerHTML = `
+    <h3>Pseudo : ${pseudo}<h3>
+    <h4>Langage préféré : ${language}<h4>
+    `;
+  } else {
+    alert("Veuillez accepter les CGV");
+  }
+});
+
+//-----------------------------------------------------------
+// Load event
+window.addEventListener("load", () => {
+  // console.log("Document Chargé !");
+});
+
+//-----------------------------------------------------------
+// ForEach
+// const boxes = document.getElementsByClassName("box");
+const boxes = document.querySelectorAll(".box");
+
+boxes.forEach((box) => {
+  box.addEventListener("click", (e) => {
+    box.style.transform = "scale(0.7)";
+  });
+});
+
+//----------------------------------------------------------- 
+// addEventListener Vs onclick
+// document.body.onclick = function() {
+//   console.log("Scroll !");
+// };
+
+// Bublbing => fin (de base l'eventlistener est paramétré en mode Bublbing)
+document.body.addEventListener("click", () => {
+    console.log("click 1 !");
+});
+
+// Usecapture
+document.body.addEventListener(
+  "click",
+  () => {
+    console.log("click 2 !");
+  },
+  true
+);  
+ 
+// Lien
+
+//----------------------------------------------------------
+// Stop propagation
+// questionContainair.addEventListener("click", (e) => {
+//   alert("Test !");
+//   e.stopPropagation();
+// });
+
+// removeEventListener
+
+// 
+// BOM
+
+// console.log(window.innerHeight);
+// console.log(window.scrollY);
+// Window.open("http://google.com", "cours js", "height=600,
+// width=800");
+// Window.close()
+
+// Evenements adossés a window
+//alert("hello");
+
+// confirm
+btn2.addEventListener("click", () => {
+  confirm("Voullez vous vraiment vous trompez ?");
+}); 
+ 
 
 
-
+  
 
 
 
