@@ -70,7 +70,7 @@ nav::after {
       left: var(--x);
       top: var(--y);
 }
-nav:hover::after {
+nav:hover::after{
     opacity: 1;
 }
 ul {

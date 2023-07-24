@@ -44,7 +44,7 @@ window.addEventListener("mouseup", () => {
 });
                         
 questionContainair.addEventListener("mouseenter", () => {
-  questionContainair.style.background = "rgba(0, 0, 0, 0.6)";
+  questionContainair.style.background = "rgba(0,0,0,0.6)";
 });
                         
 questionContainair.addEventListener("mouseout", () => {
@@ -157,9 +157,7 @@ document.body.addEventListener("click", () => {
 });
 
 // Usecapture
-document.body.addEventListener(
-  "click",
-  () => {
+document.body.addEventListener("click",() => {
     console.log("click 2 !");
   },
   true
@@ -169,10 +167,10 @@ document.body.addEventListener(
 
 //----------------------------------------------------------
 // Stop propagation
-questionContainair.addEventListener("click", (e) => {
-  alert("Test !");
-  e.stopPropagation();
-});
+// questionContainair.addEventListener("click", (e) => {
+//   alert("Test !");
+//   e.stopPropagation();
+// });
 
 // removeEventListener
 
@@ -195,7 +193,7 @@ btn2.addEventListener("click", () => {
  
 //  prompt
 btn1.addEventListener("click", () => {
-  let answer =prompt("Entrez votre nom !");
+  let answer = prompt("Entrez votre nom !");
   
   questionContainair.innerHTML += "<h3>Bravo " + answer + "</h3>";
 });
@@ -207,10 +205,10 @@ setTimeout(() => {
 
 // let interval = setInterval(() => {
 //   document.body.innerHTML += `
-//   <div class='box'>
-//   <h2>Nouvelle Boite !<h2>
-//   </div>
-//   `;
+// //   <div class='box'>
+// //   <h2>Nouvelle Boite !<h2>
+// //   </div>
+// //   `;
 // }, 1000);
 
 // document.body.addEventListener("click", (e) => {
@@ -268,8 +266,9 @@ setTimeout(() => {
 
 //--------------------------------------------------------------- 
 // setproperty
-window.addEventListener("mousemove", (e) => {
-  nav.style.setProperty("--x", e.layerX + "px");
-  nav.style.setProperty("--y", e.layerY + "px");
-});
- 
+
+
+// window.addEventListener("mousemove", (e) => {
+//   nav.style.setProperty("--x", e.layerX + "px");
+//   nav.style.setProperty("--y", e.layerY + "px");
+// });
